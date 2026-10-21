@@ -1,0 +1,44 @@
+{
+  "title": "Pradedančiųjų svorio mažinimo treniruočių planas namuose",
+  "durationWeeks": 4,
+  "notes": "Planas skirtas pradedančiajam, siekiančiam mažinti svorį sportuojant namuose be papildomos įrangos. Kiekvieną treniruotę pradėk 5 minučių apšilimu, pratimus atlik kontroliuojamai ir pasirink tokį tempą, kad galėtum išlaikyti taisyklingą techniką. Jei pajusi aštrų skausmą ar svaigulį, treniruotę nutrauk.",
+  "changeReason": null,
+  "sessions": [
+    {
+      "weekNumber": 1,
+      "dayOfWeek": 1,
+      "title": "Pirmadienis – viso kūno treniruotė",
+      "exercises": [
+        {"exerciseId": "EX04", "orderIndex": 1, "sets": 3, "reps": 12, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX02", "orderIndex": 2, "sets": 3, "reps": 10, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX06", "orderIndex": 3, "sets": 3, "reps": 15, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX07", "orderIndex": 4, "sets": 3, "reps": 20, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX12", "orderIndex": 5, "sets": 2, "reps": 15, "targetWeightKg": null, "restSeconds": 30}
+      ]
+    },
+    {
+      "weekNumber": 1,
+      "dayOfWeek": 3,
+      "title": "Trečiadienis – kojos ir kardio",
+      "exercises": [
+        {"exerciseId": "EX05", "orderIndex": 1, "sets": 3, "reps": 10, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX04", "orderIndex": 2, "sets": 3, "reps": 12, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX09", "orderIndex": 3, "sets": 3, "reps": 30, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX11", "orderIndex": 4, "sets": 3, "reps": 30, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX06", "orderIndex": 5, "sets": 3, "reps": 15, "targetWeightKg": null, "restSeconds": 30}
+      ]
+    },
+    {
+      "weekNumber": 1,
+      "dayOfWeek": 5,
+      "title": "Penktadienis – viso kūno treniruotė ir ištvermė",
+      "exercises": [
+        {"exerciseId": "EX02", "orderIndex": 1, "sets": 3, "reps": 10, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX04", "orderIndex": 2, "sets": 3, "reps": 12, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX05", "orderIndex": 3, "sets": 2, "reps": 10, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX07", "orderIndex": 4, "sets": 3, "reps": 20, "targetWeightKg": null, "restSeconds": 30},
+        {"exerciseId": "EX41", "orderIndex": 5, "sets": 1, "reps": 300, "targetWeightKg": null, "restSeconds": 0}
+      ]
+    }
+  ]
+}
