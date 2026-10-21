@@ -1,0 +1,14 @@
+{
+  "scenario": "PLAN_GENERATION",
+  "description": "Nerealus noras: pradedantysis, 7×180 min",
+  "profile": {
+    "goal": "WEIGHT_LOSS",
+    "fitnessLevel": "BEGINNER",
+    "sessionsPerWeek": 7,
+    "minutesPerSession": 180,
+    "equipment": [
+      "dumbbells"
+    ],
+    "notes": "Noriu kuo greičiau numesti 10 kg, galiu sportuoti kasdien po 3 valandas."
+  }
+}

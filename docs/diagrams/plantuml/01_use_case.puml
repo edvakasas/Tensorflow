@@ -1,0 +1,48 @@
+@startuml UseCase
+left to right direction
+skinparam packageStyle rectangle
+actor "Sportuojantysis" as Athlete
+actor "Administratorius" as Admin
+actor "LLM paslauga" as LLM <<system>>
+
+rectangle "Treniruočių planavimo sistema" {
+  usecase "Registruotis" as UC_Register
+  usecase "Prisijungti" as UC_Login
+  usecase "Tvarkyti profilį ir tikslus" as UC_Profile
+  usecase "Generuoti treniruočių planą" as UC_Generate
+  usecase "Peržiūrėti ir patvirtinti planą" as UC_Review
+  usecase "Registruoti treniruotės rezultatus" as UC_Log
+  usecase "Koreguoti planą" as UC_Adjust
+  usecase "Validuoti sugeneruotą planą" as UC_Validate
+  usecase "Peržiūrėti pažangą" as UC_Progress
+  usecase "Peržiūrėti plano versijų istoriją" as UC_History
+  usecase "Užduoti klausimą apie planą" as UC_Chat
+  usecase "Tvarkyti pratimų katalogą" as UC_Catalog
+  usecase "Tvarkyti įrangos sąrašą" as UC_Equipment
+  usecase "Peržiūrėti LLM užklausų žurnalą" as UC_LlmLog
+}
+
+Athlete --> UC_Register
+Athlete --> UC_Login
+Athlete --> UC_Profile
+Athlete --> UC_Generate
+Athlete --> UC_Review
+Athlete --> UC_Log
+Athlete --> UC_Adjust
+Athlete --> UC_Progress
+Athlete --> UC_History
+Athlete --> UC_Chat
+
+Admin --> UC_Login
+Admin --> UC_Catalog
+Admin --> UC_Equipment
+Admin --> UC_LlmLog
+
+UC_Generate ..> UC_Validate : <<include>>
+UC_Adjust ..> UC_Validate : <<include>>
+UC_Adjust ..> UC_Log : <<extend>>
+
+UC_Generate --> LLM
+UC_Adjust --> LLM
+UC_Chat --> LLM
+@enduml

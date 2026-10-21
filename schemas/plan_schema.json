@@ -1,0 +1,127 @@
+{
+  "$defs": {
+    "PlannedExercise": {
+      "properties": {
+        "exerciseId": {
+          "description": "Pratimo ID iš katalogo, pvz. EX04",
+          "title": "Exerciseid",
+          "type": "string"
+        },
+        "orderIndex": {
+          "title": "Orderindex",
+          "type": "integer"
+        },
+        "sets": {
+          "title": "Sets",
+          "type": "integer"
+        },
+        "reps": {
+          "description": "Pakartojimai; jei pratimo unit = seconds, trukmė sekundėmis",
+          "title": "Reps",
+          "type": "integer"
+        },
+        "targetWeightKg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Tik pratimams su svoriais, kitaip null",
+          "title": "Targetweightkg"
+        },
+        "restSeconds": {
+          "title": "Restseconds",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "exerciseId",
+        "orderIndex",
+        "sets",
+        "reps",
+        "restSeconds"
+      ],
+      "title": "PlannedExercise",
+      "type": "object"
+    },
+    "PlannedSession": {
+      "properties": {
+        "weekNumber": {
+          "title": "Weeknumber",
+          "type": "integer"
+        },
+        "dayOfWeek": {
+          "description": "1 = pirmadienis ... 7 = sekmadienis",
+          "title": "Dayofweek",
+          "type": "integer"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "exercises": {
+          "items": {
+            "$ref": "#/$defs/PlannedExercise"
+          },
+          "title": "Exercises",
+          "type": "array"
+        }
+      },
+      "required": [
+        "weekNumber",
+        "dayOfWeek",
+        "title",
+        "exercises"
+      ],
+      "title": "PlannedSession",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "durationWeeks": {
+      "title": "Durationweeks",
+      "type": "integer"
+    },
+    "notes": {
+      "description": "1-3 sakiniai vartotojui lietuviškai",
+      "title": "Notes",
+      "type": "string"
+    },
+    "changeReason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Pildoma tik koreguojant planą",
+      "title": "Changereason"
+    },
+    "sessions": {
+      "items": {
+        "$ref": "#/$defs/PlannedSession"
+      },
+      "title": "Sessions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "title",
+    "durationWeeks",
+    "notes",
+    "sessions"
+  ],
+  "title": "TrainingPlan",
+  "type": "object"
+}

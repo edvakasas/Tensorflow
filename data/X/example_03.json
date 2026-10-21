@@ -1,0 +1,240 @@
+{
+  "scenario": "PLAN_ADJUSTMENT",
+  "description": "Esamas planas + 3 treniruotės su RPE 9–10 ir neatliktais pakartojimais",
+  "profile": {
+    "goal": "MUSCLE_GAIN",
+    "fitnessLevel": "INTERMEDIATE",
+    "sessionsPerWeek": 3,
+    "minutesPerSession": 45,
+    "equipment": [
+      "dumbbells",
+      "bench",
+      "pull_up_bar"
+    ],
+    "notes": ""
+  },
+  "currentVersion": 1,
+  "currentPlan": {
+    "title": "Raumenų masė namuose",
+    "durationWeeks": 4,
+    "notes": "Trys treniruotės per savaitę su hanteliais ir skersiniu.",
+    "changeReason": null,
+    "sessions": [
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 1,
+        "title": "Viršutinė kūno dalis",
+        "exercises": [
+          {
+            "exerciseId": "EX18",
+            "sets": 4,
+            "reps": 10,
+            "targetWeightKg": 26,
+            "restSeconds": 90,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX19",
+            "sets": 4,
+            "reps": 10,
+            "targetWeightKg": 26,
+            "restSeconds": 90,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX15",
+            "sets": 3,
+            "reps": 8,
+            "targetWeightKg": null,
+            "restSeconds": 120,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX21",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": 18,
+            "restSeconds": 75,
+            "orderIndex": 4
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 3,
+        "title": "Kojos ir korpusas",
+        "exercises": [
+          {
+            "exerciseId": "EX20",
+            "sets": 4,
+            "reps": 12,
+            "targetWeightKg": 28,
+            "restSeconds": 90,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX23",
+            "sets": 4,
+            "reps": 10,
+            "targetWeightKg": 26,
+            "restSeconds": 90,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX13",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": null,
+            "restSeconds": 75,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX07",
+            "sets": 3,
+            "reps": 45,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 4
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 5,
+        "title": "Viso kūno",
+        "exercises": [
+          {
+            "exerciseId": "EX18",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 24,
+            "restSeconds": 75,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX20",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 28,
+            "restSeconds": 75,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX16",
+            "sets": 3,
+            "reps": 8,
+            "targetWeightKg": null,
+            "restSeconds": 90,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX22",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 12,
+            "restSeconds": 60,
+            "orderIndex": 4
+          }
+        ]
+      }
+    ]
+  },
+  "recentLogs": [
+    {
+      "dayOfWeek": 1,
+      "performedAt": "2026-10-12",
+      "rpe": 9,
+      "notes": "Paskutinės spaudimo serijos labai sunkios.",
+      "results": [
+        {
+          "exerciseId": "EX18",
+          "setsDone": 4,
+          "repsDone": 7,
+          "weightKg": 26
+        },
+        {
+          "exerciseId": "EX19",
+          "setsDone": 4,
+          "repsDone": 10,
+          "weightKg": 26
+        },
+        {
+          "exerciseId": "EX15",
+          "setsDone": 3,
+          "repsDone": 7,
+          "weightKg": null
+        },
+        {
+          "exerciseId": "EX21",
+          "setsDone": 3,
+          "repsDone": 10,
+          "weightKg": 18
+        }
+      ]
+    },
+    {
+      "dayOfWeek": 3,
+      "performedAt": "2026-10-14",
+      "rpe": 10,
+      "notes": "Taurės pritūpimų nepabaigiau, pavargo nugara.",
+      "results": [
+        {
+          "exerciseId": "EX20",
+          "setsDone": 3,
+          "repsDone": 9,
+          "weightKg": 28
+        },
+        {
+          "exerciseId": "EX23",
+          "setsDone": 4,
+          "repsDone": 10,
+          "weightKg": 26
+        },
+        {
+          "exerciseId": "EX13",
+          "setsDone": 3,
+          "repsDone": 10,
+          "weightKg": null
+        },
+        {
+          "exerciseId": "EX07",
+          "setsDone": 3,
+          "repsDone": 45,
+          "weightKg": null
+        }
+      ]
+    },
+    {
+      "dayOfWeek": 5,
+      "performedAt": "2026-10-16",
+      "rpe": 9,
+      "notes": "",
+      "results": [
+        {
+          "exerciseId": "EX18",
+          "setsDone": 3,
+          "repsDone": 9,
+          "weightKg": 24
+        },
+        {
+          "exerciseId": "EX20",
+          "setsDone": 3,
+          "repsDone": 10,
+          "weightKg": 28
+        },
+        {
+          "exerciseId": "EX16",
+          "setsDone": 3,
+          "repsDone": 8,
+          "weightKg": null
+        },
+        {
+          "exerciseId": "EX22",
+          "setsDone": 3,
+          "repsDone": 12,
+          "weightKg": 12
+        }
+      ]
+    }
+  ]
+}

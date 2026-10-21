@@ -1,0 +1,63 @@
+@startuml SeqGeneratePlan
+autonumber
+actor "Sportuojantysis" as User
+participant "Web UI" as UI
+participant "PlanController" as Ctrl
+participant "PlanService" as PlanSvc
+participant "ExerciseCatalogService" as Catalog
+participant "PromptBuilder" as Prompt
+participant "LlmGateway" as Gateway
+participant "ResponseValidator" as Validator
+database "PostgreSQL" as DB
+participant "LLM API" as LLM
+
+User -> UI : Spaudžia „Generuoti planą“
+UI -> Ctrl : POST /api/plans
+activate Ctrl
+Ctrl -> PlanSvc : generatePlan(userId)
+activate PlanSvc
+PlanSvc -> DB : SELECT profilis ir įranga
+DB --> PlanSvc : AthleteProfile
+PlanSvc -> Catalog : findSuitable(fitnessLevel, equipment)
+Catalog -> DB : SELECT exercises
+DB --> Catalog : pratimai
+Catalog --> PlanSvc : tinkamų pratimų sąrašas
+PlanSvc -> Prompt : buildGenerationPrompt(profile, exercises, jsonSchema)
+Prompt --> PlanSvc : prompt
+
+loop iki 3 bandymų, kol gaunamas validus atsakymas
+  PlanSvc -> Gateway : complete(prompt)
+  activate Gateway
+  Gateway -> LLM : užklausa (struktūrizuotos išvesties režimas)
+  LLM --> Gateway : JSON atsakymas
+  Gateway -> DB : INSERT llm_requests
+  Gateway --> PlanSvc : atsakymas
+  deactivate Gateway
+  PlanSvc -> Validator : validate(json)
+  activate Validator
+  Validator -> Validator : JSON Schema patikra
+  Validator -> Catalog : ar visi exerciseId egzistuoja ir tinka?
+  Catalog --> Validator : patikros rezultatas
+  Validator -> Validator : krūvio ribų patikra
+  Validator --> PlanSvc : ValidationResult
+  deactivate Validator
+  opt validacija nepavyko
+    PlanSvc -> Prompt : addValidationErrors(prompt, errors)
+    Prompt --> PlanSvc : pataisytas prompt
+  end
+end
+
+alt planas validus
+  PlanSvc -> DB : INSERT plan (DRAFT), version v1, sessions, exercises (viena transakcija)
+  DB --> PlanSvc : OK
+  PlanSvc --> Ctrl : TrainingPlan
+  Ctrl --> UI : 201 Created
+  UI --> User : rodo plano juodraštį
+else visi 3 bandymai nepavyko
+  PlanSvc --> Ctrl : PlanGenerationException
+  Ctrl --> UI : 502 Bad Gateway
+  UI --> User : klaidos pranešimas
+end
+deactivate PlanSvc
+deactivate Ctrl
+@enduml

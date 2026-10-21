@@ -1,0 +1,142 @@
+@startuml DomainModel
+skinparam classAttributeIconSize 0
+hide empty methods
+
+enum Role {
+  ATHLETE
+  ADMIN
+}
+enum Goal {
+  MUSCLE_GAIN
+  ENDURANCE
+  WEIGHT_LOSS
+  GENERAL_FITNESS
+}
+enum FitnessLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+enum PlanStatus {
+  DRAFT
+  ACTIVE
+  ADJUSTING
+  COMPLETED
+  ARCHIVED
+}
+enum LlmPurpose {
+  PLAN_GENERATION
+  PLAN_ADJUSTMENT
+  CHAT
+}
+enum MessageSender {
+  USER
+  ASSISTANT
+}
+
+class User {
+  id: UUID
+  email: String
+  passwordHash: String
+  displayName: String
+  role: Role
+  createdAt: DateTime
+}
+class AthleteProfile {
+  id: UUID
+  goal: Goal
+  fitnessLevel: FitnessLevel
+  sessionsPerWeek: int
+  minutesPerSession: int
+  notes: String
+  updatedAt: DateTime
+}
+class Equipment {
+  id: UUID
+  name: String
+}
+class Exercise {
+  id: UUID
+  name: String
+  description: String
+  muscleGroup: String
+  difficulty: FitnessLevel
+  isActive: boolean
+}
+class TrainingPlan {
+  id: UUID
+  title: String
+  status: PlanStatus
+  startDate: Date
+  durationWeeks: int
+  createdAt: DateTime
+}
+class PlanVersion {
+  id: UUID
+  versionNumber: int
+  changeReason: String
+  createdAt: DateTime
+}
+class PlannedSession {
+  id: UUID
+  weekNumber: int
+  dayOfWeek: int
+  title: String
+}
+class PlannedExercise {
+  id: UUID
+  orderIndex: int
+  sets: int
+  reps: int
+  targetWeightKg: decimal
+  restSeconds: int
+}
+class WorkoutLog {
+  id: UUID
+  performedAt: DateTime
+  rpe: int
+  notes: String
+}
+class ExerciseResult {
+  id: UUID
+  setsDone: int
+  repsDone: int
+  weightKg: decimal
+}
+class LlmRequest {
+  id: UUID
+  purpose: LlmPurpose
+  model: String
+  prompt: String
+  rawResponse: String
+  isValid: boolean
+  validationErrors: String
+  attemptNumber: int
+  tokensUsed: int
+  createdAt: DateTime
+}
+class ChatMessage {
+  id: UUID
+  sender: MessageSender
+  content: String
+  createdAt: DateTime
+}
+
+User "1" -- "0..1" AthleteProfile
+AthleteProfile "*" -- "*" Equipment : turi prieinamą >
+Exercise "*" -- "*" Equipment : reikalauja >
+User "1" -- "*" TrainingPlan
+TrainingPlan "1" *-- "1..*" PlanVersion
+PlanVersion "1" *-- "1..*" PlannedSession
+PlannedSession "1" *-- "1..*" PlannedExercise
+PlannedExercise "*" --> "1" Exercise
+User "1" -- "*" WorkoutLog
+WorkoutLog "*" --> "1" PlannedSession
+WorkoutLog "1" *-- "1..*" ExerciseResult
+ExerciseResult "*" --> "1" PlannedExercise
+PlanVersion "*" --> "0..1" WorkoutLog : inicijuota >
+PlanVersion "*" --> "0..1" LlmRequest : sugeneruota >
+User "1" -- "*" LlmRequest
+User "1" -- "*" ChatMessage
+ChatMessage "*" --> "0..1" TrainingPlan : susijusi su >
+@enduml

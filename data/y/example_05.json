@@ -1,0 +1,183 @@
+{
+  "criteria": {
+    "sessions_per_week": 4,
+    "max_session_minutes": 60,
+    "allowed_equipment": [
+      "dumbbells"
+    ],
+    "max_difficulty": "BEGINNER",
+    "notes_present": true
+  },
+  "reference": {
+    "title": "Saugus svorio metimo startas",
+    "durationWeeks": 4,
+    "notes": "Pradedančiajam 7 treniruotės po 3 val. kelia traumų ir persitreniravimo riziką, todėl planas apribotas iki 4 treniruočių po ne daugiau kaip 60 min. Svorio metimui svarbiausia mityba ir kasdienis judėjimas, o ne treniruočių trukmė.",
+    "changeReason": null,
+    "sessions": [
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 1,
+        "title": "Viso kūno A",
+        "exercises": [
+          {
+            "exerciseId": "EX11",
+            "sets": 3,
+            "reps": 60,
+            "targetWeightKg": null,
+            "restSeconds": 30,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX20",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 10,
+            "restSeconds": 60,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX01",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX21",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": 6,
+            "restSeconds": 60,
+            "orderIndex": 4
+          },
+          {
+            "exerciseId": "EX06",
+            "sets": 3,
+            "reps": 15,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 5
+          },
+          {
+            "exerciseId": "EX07",
+            "sets": 3,
+            "reps": 30,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 6
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 2,
+        "title": "Kardio",
+        "exercises": [
+          {
+            "exerciseId": "EX41",
+            "sets": 1,
+            "reps": 1800,
+            "targetWeightKg": null,
+            "restSeconds": 0,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX09",
+            "sets": 3,
+            "reps": 30,
+            "targetWeightKg": null,
+            "restSeconds": 30,
+            "orderIndex": 2
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 4,
+        "title": "Viso kūno B",
+        "exercises": [
+          {
+            "exerciseId": "EX11",
+            "sets": 3,
+            "reps": 60,
+            "targetWeightKg": null,
+            "restSeconds": 30,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX05",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX22",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 6,
+            "restSeconds": 60,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX25",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 6,
+            "restSeconds": 60,
+            "orderIndex": 4
+          },
+          {
+            "exerciseId": "EX24",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 4,
+            "restSeconds": 60,
+            "orderIndex": 5
+          },
+          {
+            "exerciseId": "EX12",
+            "sets": 3,
+            "reps": 20,
+            "targetWeightKg": null,
+            "restSeconds": 40,
+            "orderIndex": 6
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 6,
+        "title": "Kardio ir korpusas",
+        "exercises": [
+          {
+            "exerciseId": "EX41",
+            "sets": 1,
+            "reps": 1500,
+            "targetWeightKg": null,
+            "restSeconds": 0,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX07",
+            "sets": 3,
+            "reps": 30,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX06",
+            "sets": 3,
+            "reps": 15,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 3
+          }
+        ]
+      }
+    ]
+  }
+}

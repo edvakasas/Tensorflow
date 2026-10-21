@@ -1,0 +1,28 @@
+@startuml Deployment
+node "Vartotojo įrenginys" as ClientDevice {
+  component "Naršyklė" as Browser
+}
+
+node "Aplikacijų serveris (Linux)" <<device>> as Server {
+  node "Docker Engine" <<executionEnvironment>> as Docker {
+    node "nginx konteineris" as Nginx {
+      artifact "frontend build (React)" as FeArt
+    }
+    node "api konteineris" as ApiNode {
+      artifact "backend API" as BeArt
+    }
+    node "postgres konteineris" as PgNode {
+      database "training_db" as TrainingDb
+    }
+  }
+}
+
+cloud "LLM tiekėjas" as Provider {
+  node "LLM API" as LlmNode
+}
+
+Browser --> Nginx : HTTPS :443
+Nginx --> ApiNode : HTTP :8080 (/api reverse proxy)
+ApiNode --> PgNode : TCP :5432
+ApiNode --> LlmNode : HTTPS :443
+@enduml

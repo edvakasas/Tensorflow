@@ -1,0 +1,18 @@
+@startuml PlanStates
+hide empty description
+[*] --> DRAFT : planas sugeneruotas ir validuotas
+DRAFT --> ACTIVE : vartotojas patvirtina
+DRAFT --> ARCHIVED : vartotojas atmeta
+ACTIVE --> ADJUSTING : analizė rodo koregavimo poreikį
+ADJUSTING --> ACTIVE : nauja versija validi [versija + 1]
+ADJUSTING --> ACTIVE : koregavimas nepavyko [lieka ankstesnė versija]
+ACTIVE --> COMPLETED : atliktos visos treniruotės
+ACTIVE --> ARCHIVED : vartotojas nutraukia planą
+COMPLETED --> ARCHIVED : sukuriamas naujas planas
+ARCHIVED --> [*]
+
+note right of ACTIVE
+  Vartotojas vienu metu gali turėti
+  tik vieną ACTIVE būsenos planą
+end note
+@enduml

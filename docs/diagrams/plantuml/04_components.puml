@@ -1,0 +1,59 @@
+@startuml Components
+skinparam componentStyle uml2
+
+actor "Vartotojas" as U
+
+package "Frontend (React SPA)" {
+  component "Web UI" as UI
+}
+
+package "Backend" {
+  interface "REST API" as REST
+  component "API sluoksnis\n(REST controllers)" as API
+  component "AuthService" as Auth
+  component "ProfileService" as ProfileSvc
+  component "PlanService" as PlanSvc
+  component "WorkoutService" as WorkoutSvc
+  component "ProgressAnalyzer" as Analyzer
+  component "ChatService" as ChatSvc
+  component "ExerciseCatalogService" as CatalogSvc
+  package "LLM integracija" {
+    component "PromptBuilder" as Prompt
+    component "LlmGateway" as Gateway
+    component "ResponseValidator\n(JSON Schema + domeno taisyklės)" as Validator
+  }
+  component "Repositories (ORM)" as Repo
+}
+
+database "PostgreSQL" as DB
+cloud "LLM API\n(išorinis tiekėjas)" as LLMAPI
+
+U --> UI
+UI --> REST : HTTPS, JSON, JWT
+REST - API
+API --> Auth
+API --> ProfileSvc
+API --> PlanSvc
+API --> WorkoutSvc
+API --> ChatSvc
+API --> CatalogSvc
+PlanSvc --> CatalogSvc
+PlanSvc --> Prompt
+PlanSvc --> Gateway
+PlanSvc --> Validator
+WorkoutSvc --> Analyzer
+WorkoutSvc --> PlanSvc : inicijuoja koregavimą
+ChatSvc --> Prompt
+ChatSvc --> Gateway
+Validator --> CatalogSvc : pratimų ID patikra
+Gateway --> LLMAPI : HTTPS
+Gateway --> Repo : LLM užklausų žurnalas
+Auth --> Repo
+ProfileSvc --> Repo
+PlanSvc --> Repo
+WorkoutSvc --> Repo
+Analyzer --> Repo
+ChatSvc --> Repo
+CatalogSvc --> Repo
+Repo --> DB : SQL
+@enduml

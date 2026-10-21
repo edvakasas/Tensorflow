@@ -1,0 +1,198 @@
+{
+  "criteria": {
+    "sessions_per_week": 4,
+    "max_session_minutes": 60,
+    "allowed_equipment": [
+      "barbell",
+      "squat_rack",
+      "bench",
+      "dumbbells",
+      "cable_machine",
+      "pull_up_bar",
+      "leg_press_machine",
+      "dip_station"
+    ],
+    "weights_for_loaded": true,
+    "notes_present": true
+  },
+  "reference": {
+    "title": "Viršus / apačia: jėga ir hipertrofija",
+    "durationWeeks": 4,
+    "notes": "Pagrindiniai pratimai 5×5 apie 90 % darbinio svorio, papildomi – 8–12 pakartojimų. Kas savaitę didink pagrindinių pratimų svorį 2,5 kg, jei visi pakartojimai atlikti.",
+    "changeReason": null,
+    "sessions": [
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 1,
+        "title": "Apatinė dalis A",
+        "exercises": [
+          {
+            "exerciseId": "EX26",
+            "sets": 5,
+            "reps": 5,
+            "targetWeightKg": 110,
+            "restSeconds": 180,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX23",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": 30,
+            "restSeconds": 90,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX35",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 160,
+            "restSeconds": 90,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX17",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 4
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 2,
+        "title": "Viršutinė dalis A",
+        "exercises": [
+          {
+            "exerciseId": "EX27",
+            "sets": 5,
+            "reps": 5,
+            "targetWeightKg": 85,
+            "restSeconds": 180,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX29",
+            "sets": 4,
+            "reps": 8,
+            "targetWeightKg": 70,
+            "restSeconds": 120,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX21",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": 22,
+            "restSeconds": 90,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX42",
+            "sets": 3,
+            "reps": 8,
+            "targetWeightKg": 20,
+            "restSeconds": 90,
+            "orderIndex": 4
+          },
+          {
+            "exerciseId": "EX22",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 14,
+            "restSeconds": 60,
+            "orderIndex": 5
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 4,
+        "title": "Apatinė dalis B",
+        "exercises": [
+          {
+            "exerciseId": "EX28",
+            "sets": 4,
+            "reps": 5,
+            "targetWeightKg": 140,
+            "restSeconds": 180,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX31",
+            "sets": 3,
+            "reps": 6,
+            "targetWeightKg": 80,
+            "restSeconds": 150,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX13",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": null,
+            "restSeconds": 90,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX08",
+            "sets": 3,
+            "reps": 40,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 4
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 5,
+        "title": "Viršutinė dalis B",
+        "exercises": [
+          {
+            "exerciseId": "EX30",
+            "sets": 4,
+            "reps": 6,
+            "targetWeightKg": 50,
+            "restSeconds": 150,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX15",
+            "sets": 4,
+            "reps": 8,
+            "targetWeightKg": null,
+            "restSeconds": 120,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX18",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": 32,
+            "restSeconds": 90,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX32",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 60,
+            "restSeconds": 75,
+            "orderIndex": 4
+          },
+          {
+            "exerciseId": "EX34",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": 30,
+            "restSeconds": 60,
+            "orderIndex": 5
+          }
+        ]
+      }
+    ]
+  }
+}

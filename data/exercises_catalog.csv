@@ -1,0 +1,43 @@
+id,name,name_lt,muscle_group,difficulty,equipment,unit,is_active
+EX01,Push-up,Atsispaudimai,chest,BEGINNER,none,reps,true
+EX02,Knee push-up,Atsispaudimai nuo kelių,chest,BEGINNER,none,reps,true
+EX03,Diamond push-up,Deimantiniai atsispaudimai,triceps,INTERMEDIATE,none,reps,true
+EX04,Bodyweight squat,Pritūpimai be svorio,legs,BEGINNER,none,reps,true
+EX05,Reverse lunge,Atgaliniai įtupstai,legs,BEGINNER,none,reps,true
+EX06,Glute bridge,Dubens kėlimas,glutes,BEGINNER,none,reps,true
+EX07,Plank,Lenta,core,BEGINNER,none,seconds,true
+EX08,Side plank,Šoninė lenta,core,INTERMEDIATE,none,seconds,true
+EX09,Mountain climbers,Kopikas,cardio,BEGINNER,none,seconds,true
+EX10,Burpee,Berpis,cardio,INTERMEDIATE,none,reps,true
+EX11,Jumping jacks,Šuoliukai išskečiant,cardio,BEGINNER,none,seconds,true
+EX12,Superman hold,Supermenas,back,BEGINNER,none,seconds,true
+EX13,Bulgarian split squat,Bulgariški pritūpimai,legs,INTERMEDIATE,none,reps,true
+EX14,Pike push-up,Atsispaudimai „smailė“,shoulders,INTERMEDIATE,none,reps,true
+EX15,Pull-up,Prisitraukimai,back,INTERMEDIATE,pull_up_bar,reps,true
+EX16,Chin-up,Prisitraukimai atvirkštiniu suėmimu,biceps,INTERMEDIATE,pull_up_bar,reps,true
+EX17,Hanging knee raise,Kelių kėlimas kabant,core,INTERMEDIATE,pull_up_bar,reps,true
+EX18,Dumbbell bench press,Hantelių spaudimas gulint,chest,BEGINNER,dumbbells;bench,reps,true
+EX19,Dumbbell row,Hantelio trauka pasilenkus,back,BEGINNER,dumbbells;bench,reps,true
+EX20,Goblet squat,Taurės pritūpimai,legs,BEGINNER,dumbbells,reps,true
+EX21,Dumbbell shoulder press,Hantelių spaudimas virš galvos,shoulders,BEGINNER,dumbbells,reps,true
+EX22,Dumbbell biceps curl,Bicepso lenkimai su hanteliais,biceps,BEGINNER,dumbbells,reps,true
+EX23,Dumbbell Romanian deadlift,Rumuniška trauka su hanteliais,hamstrings,INTERMEDIATE,dumbbells,reps,true
+EX24,Lateral raise,Hantelių kėlimas į šonus,shoulders,BEGINNER,dumbbells,reps,true
+EX25,Overhead triceps extension,Tricepso tiesimas virš galvos,triceps,BEGINNER,dumbbells,reps,true
+EX26,Barbell back squat,Pritūpimai su štanga,legs,INTERMEDIATE,barbell;squat_rack,reps,true
+EX27,Barbell bench press,Štangos spaudimas gulint,chest,INTERMEDIATE,barbell;bench,reps,true
+EX28,Conventional deadlift,Klasikinė mirties trauka,back,ADVANCED,barbell,reps,true
+EX29,Barbell row,Štangos trauka pasilenkus,back,INTERMEDIATE,barbell,reps,true
+EX30,Overhead press,Štangos spaudimas stovint,shoulders,INTERMEDIATE,barbell,reps,true
+EX31,Front squat,Priekiniai pritūpimai,legs,ADVANCED,barbell;squat_rack,reps,true
+EX32,Lat pulldown,Viršutinio bloko trauka,back,BEGINNER,cable_machine,reps,true
+EX33,Seated cable row,Apatinio bloko trauka sėdint,back,BEGINNER,cable_machine,reps,true
+EX34,Triceps pushdown,Tricepso tiesimas bloke,triceps,BEGINNER,cable_machine,reps,true
+EX35,Leg press,Kojų spaudimas treniruoklyje,legs,BEGINNER,leg_press_machine,reps,true
+EX36,Kettlebell swing,Svarsčio mostai,hamstrings,INTERMEDIATE,kettlebell,reps,true
+EX37,Resistance band row,Trauka su guma,back,BEGINNER,resistance_band,reps,true
+EX38,Band pull-apart,Gumos tempimas į šonus,shoulders,BEGINNER,resistance_band,reps,true
+EX39,Treadmill intervals,Intervalinis bėgimas takelyje,cardio,INTERMEDIATE,treadmill,seconds,true
+EX40,Stationary bike,Dviratis treniruoklis,cardio,BEGINNER,stationary_bike,seconds,true
+EX41,Jogging,Lėtas bėgimas lauke,cardio,BEGINNER,none,seconds,true
+EX42,Weighted dip,Atsilenkimai ant lygiagrečių su svoriu,triceps,ADVANCED,dip_station,reps,true

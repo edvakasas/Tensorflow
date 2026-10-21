@@ -1,0 +1,65 @@
+@startuml SeqAdjustPlan
+autonumber
+actor "Sportuojantysis" as User
+participant "Web UI" as UI
+participant "WorkoutController" as Ctrl
+participant "WorkoutService" as WorkoutSvc
+participant "ProgressAnalyzer" as Analyzer
+participant "PlanService" as PlanSvc
+participant "PromptBuilder" as Prompt
+participant "LlmGateway" as Gateway
+participant "ResponseValidator" as Validator
+database "PostgreSQL" as DB
+participant "LLM API" as LLM
+
+User -> UI : Įveda atliktus pratimus ir RPE
+UI -> Ctrl : POST /api/workouts
+activate Ctrl
+Ctrl -> WorkoutSvc : logWorkout(dto)
+activate WorkoutSvc
+WorkoutSvc -> DB : INSERT workout_logs, exercise_results
+DB --> WorkoutSvc : workoutLogId
+WorkoutSvc -> Analyzer : analyze(userId, planId)
+activate Analyzer
+Analyzer -> DB : SELECT paskutinės treniruotės ir aktyvi plano versija
+DB --> Analyzer : duomenys
+Analyzer -> Analyzer : planuota vs faktiška, RPE tendencija
+Analyzer --> WorkoutSvc : AnalysisResult(needsAdjustment, reasons)
+deactivate Analyzer
+
+alt reikia koreguoti planą
+  WorkoutSvc -> PlanSvc : adjustPlan(planId, analysis, workoutLogId)
+  activate PlanSvc
+  PlanSvc -> DB : UPDATE status = ADJUSTING
+  PlanSvc -> Prompt : buildAdjustmentPrompt(currentVersion, recentLogs, analysis)
+  Prompt --> PlanSvc : prompt
+  loop iki 3 bandymų, kol gaunamas validus atsakymas
+    PlanSvc -> Gateway : complete(prompt)
+    activate Gateway
+    Gateway -> LLM : užklausa
+    LLM --> Gateway : JSON atsakymas
+    Gateway -> DB : INSERT llm_requests
+    Gateway --> PlanSvc : atsakymas
+    deactivate Gateway
+    PlanSvc -> Validator : validate(json)
+    Validator --> PlanSvc : ValidationResult
+  end
+  alt nauja versija validi
+    PlanSvc -> DB : INSERT plan_versions (n+1, changeReason, triggeredByLogId)
+    PlanSvc -> DB : UPDATE status = ACTIVE
+    PlanSvc --> WorkoutSvc : pakeitimų santrauka
+  else koregavimas nepavyko
+    PlanSvc -> DB : UPDATE status = ACTIVE (lieka ankstesnė versija)
+    PlanSvc --> WorkoutSvc : koregavimas atidėtas
+  end
+  deactivate PlanSvc
+else korekcija nereikalinga
+  note over WorkoutSvc : planas lieka nepakeistas
+end
+
+WorkoutSvc --> Ctrl : WorkoutSummary
+deactivate WorkoutSvc
+Ctrl --> UI : 201 Created
+deactivate Ctrl
+UI --> User : rezultatai išsaugoti ir plano pakeitimai, jei buvo
+@enduml

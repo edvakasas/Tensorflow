@@ -1,0 +1,17 @@
+{
+  "scenario": "CHAT",
+  "description": "Klausimas natūralia kalba apie pratimo pakeitimą",
+  "profile": {
+    "goal": "GENERAL_FITNESS",
+    "fitnessLevel": "INTERMEDIATE",
+    "sessionsPerWeek": 3,
+    "minutesPerSession": 45,
+    "equipment": [
+      "dumbbells",
+      "bench",
+      "resistance_band"
+    ],
+    "notes": ""
+  },
+  "question": "Kuo pakeisti prisitraukimus, jei neturiu skersinio?"
+}

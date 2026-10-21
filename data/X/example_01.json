@@ -1,0 +1,12 @@
+{
+  "scenario": "PLAN_GENERATION",
+  "description": "Pradedančioji, be įrangos, svorio metimas, 3×30 min",
+  "profile": {
+    "goal": "WEIGHT_LOSS",
+    "fitnessLevel": "BEGINNER",
+    "sessionsPerWeek": 3,
+    "minutesPerSession": 30,
+    "equipment": [],
+    "notes": "Sportuoju namuose vakarais, įrangos neturiu."
+  }
+}

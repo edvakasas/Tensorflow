@@ -1,0 +1,21 @@
+{
+  "scenario": "PLAN_GENERATION",
+  "description": "Pažengęs, sporto salė, raumenų masė, 4×60 min",
+  "profile": {
+    "goal": "MUSCLE_GAIN",
+    "fitnessLevel": "ADVANCED",
+    "sessionsPerWeek": 4,
+    "minutesPerSession": 60,
+    "equipment": [
+      "barbell",
+      "squat_rack",
+      "bench",
+      "dumbbells",
+      "cable_machine",
+      "pull_up_bar",
+      "leg_press_machine",
+      "dip_station"
+    ],
+    "notes": "Darbiniai svoriai 5 pakartojimams: pritūpimai 120 kg, spaudimas gulint 90 kg, mirties trauka 150 kg, spaudimas stovint 55 kg. Tinka viršutinės/apatinės dalies padalijimas."
+  }
+}

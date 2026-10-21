@@ -1,0 +1,46 @@
+@startuml Activity
+|Sportuojantysis|
+start
+:Registruojasi sistemoje;
+:Užpildo profilį ir tikslus;
+repeat
+  :Inicijuoja plano generavimą;
+  |Sistema|
+  :Parenka tinkamus pratimus iš katalogo;
+  :Sudaro LLM užklausą;
+  repeat
+    |LLM paslauga|
+    :Sugeneruoja planą JSON formatu;
+    |Sistema|
+    :Validuoja atsakymą;
+  repeat while (Nevalidus ir bandymų < 3?) is (taip) not (ne)
+  if (Atsakymas validus?) then (ne)
+    :Rodo klaidos pranešimą;
+    stop
+  endif
+  :Išsaugo planą (DRAFT);
+  |Sportuojantysis|
+  :Peržiūri plano juodraštį;
+  backward :Archyvuoja atmestą juodraštį;
+repeat while (Planas netinka?) is (taip) not (ne)
+:Patvirtina planą;
+|Sistema|
+:Pakeičia būseną į ACTIVE;
+repeat
+  |Sportuojantysis|
+  :Atlieka treniruotę;
+  :Įveda rezultatus ir RPE;
+  |Sistema|
+  :Išsaugo rezultatus;
+  :Analizuoja pažangą;
+  if (Reikia koreguoti planą?) then (taip)
+    |LLM paslauga|
+    :Sugeneruoja pataisytą planą;
+    |Sistema|
+    :Validuoja ir išsaugo naują versiją;
+  else (ne)
+  endif
+repeat while (Liko neatliktų treniruočių?) is (taip) not (ne)
+:Pažymi planą COMPLETED;
+stop
+@enduml

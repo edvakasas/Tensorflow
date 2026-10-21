@@ -1,0 +1,142 @@
+{
+  "criteria": {
+    "sessions_per_week": 3,
+    "max_session_minutes": 30,
+    "allowed_equipment": [],
+    "max_difficulty": "BEGINNER",
+    "notes_present": true
+  },
+  "reference": {
+    "title": "Svorio metimas be įrangos",
+    "durationWeeks": 4,
+    "notes": "Trys trumpos viso kūno treniruotės su kardio intervalais. Tarp treniruočių palik bent vieną poilsio dieną.",
+    "changeReason": null,
+    "sessions": [
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 1,
+        "title": "Viso kūno A",
+        "exercises": [
+          {
+            "exerciseId": "EX11",
+            "sets": 2,
+            "reps": 60,
+            "targetWeightKg": null,
+            "restSeconds": 30,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX04",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX02",
+            "sets": 3,
+            "reps": 8,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX06",
+            "sets": 3,
+            "reps": 12,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 4
+          },
+          {
+            "exerciseId": "EX07",
+            "sets": 3,
+            "reps": 30,
+            "targetWeightKg": null,
+            "restSeconds": 45,
+            "orderIndex": 5
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 3,
+        "title": "Kardio ir kojos",
+        "exercises": [
+          {
+            "exerciseId": "EX41",
+            "sets": 1,
+            "reps": 900,
+            "targetWeightKg": null,
+            "restSeconds": 0,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX05",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX09",
+            "sets": 3,
+            "reps": 30,
+            "targetWeightKg": null,
+            "restSeconds": 30,
+            "orderIndex": 3
+          }
+        ]
+      },
+      {
+        "weekNumber": 1,
+        "dayOfWeek": 5,
+        "title": "Viso kūno B",
+        "exercises": [
+          {
+            "exerciseId": "EX11",
+            "sets": 2,
+            "reps": 60,
+            "targetWeightKg": null,
+            "restSeconds": 30,
+            "orderIndex": 1
+          },
+          {
+            "exerciseId": "EX05",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 2
+          },
+          {
+            "exerciseId": "EX02",
+            "sets": 3,
+            "reps": 10,
+            "targetWeightKg": null,
+            "restSeconds": 60,
+            "orderIndex": 3
+          },
+          {
+            "exerciseId": "EX12",
+            "sets": 3,
+            "reps": 20,
+            "targetWeightKg": null,
+            "restSeconds": 40,
+            "orderIndex": 4
+          },
+          {
+            "exerciseId": "EX09",
+            "sets": 3,
+            "reps": 30,
+            "targetWeightKg": null,
+            "restSeconds": 30,
+            "orderIndex": 5
+          }
+        ]
+      }
+    ]
+  }
+}

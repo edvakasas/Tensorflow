@@ -1,0 +1,16 @@
+{
+  "criteria": {
+    "cited_min": 2,
+    "cited_excluded": [
+      "EX15",
+      "EX16",
+      "EX17"
+    ],
+    "cited_allowed_equipment": [
+      "dumbbells",
+      "bench",
+      "resistance_band"
+    ]
+  },
+  "reference": "Prisitraukimai daugiausia treniruoja plačiuosius nugaros raumenis, todėl be skersinio juos geriausiai pakeis traukos pratimai. Su tavo įranga tinka hantelio trauka pasilenkus [EX19]: 3–4 serijos po 8–12 kartų kiekvienai rankai, atsirėmus ranka ir keliu į suolą. Papildomai daryk trauką su guma [EX37], o laikysenai ir užpakaliniams deltiniams – gumos tempimą į šonus [EX38]. Kai įsigysi skersinį, prisitraukimus galėsi grąžinti į planą."
+}
