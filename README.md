@@ -51,6 +51,27 @@ LLM gali naudoti tik katalogo pratimus, o sprendimą, ar reikia koreguoti planą
 3. Colab kairėje atidarykite **Secrets** (🔑), pridėkite `GOOGLE_API_KEY` ir įjunkite „Notebook access“.
 4. **Runtime → Run all.** Notebook pats atsisiunčia šią saugyklą ir naudoja jos duomenis.
 
+## 1.3 užduotis: AdventureWorks notebook'ai su Bank Marketing duomenimis
+
+Dėstytojo „AdventureWorks DW using TensorFlow“ (neuroninis tinklas) ir „… Decision Forests“ notebook'ai paaiškinti ir perdaryti su verslo duomenimis – [UCI / Kaggle Bank Marketing](data/bank_marketing/) (ar klientas po skambučio sutiks su terminuotu indėliu; 45 211 klientų, 11,7 % „yes“).
+
+| Notebook | Turinys | |
+|---|---|---|
+| [`1_3_bank_marketing_nn.ipynb`](notebooks/1_3_bank_marketing_nn.ipynb) | Originalo paaiškinimas, Keras Functional API su preprocessing sluoksniais, klasių svoriai | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edvakasas/Tensorflow/blob/main/notebooks/1_3_bank_marketing_nn.ipynb) |
+| [`1_3_bank_marketing_decision_forests.ipynb`](notebooks/1_3_bank_marketing_decision_forests.ipynb) | Originalo paaiškinimas, Random Forest ir Gradient Boosted Trees (YDF – TF-DF įpėdinis), požymių svarba, slenkstis | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edvakasas/Tensorflow/blob/main/notebooks/1_3_bank_marketing_decision_forests.ipynb) |
+
+Rezultatai toje pačioje testavimo aibėje (4 522 klientai):
+
+| Modelis | AUC | Accuracy | Recall |
+|---|---|---|---|
+| Visada „no“ | 0,500 | 0,884 | 0,000 |
+| NN | 0,798 | 0,890 | 0,173 |
+| NN su klasių svoriais | 0,791 | 0,820 | 0,586 |
+| Random Forest | 0,776 | 0,893 | 0,181 |
+| **Gradient Boosted Trees** | **0,802** | 0,894 | 0,226 |
+
+Pagrindinės išvados: su nesubalansuotomis klasėmis accuracy klaidinanti (naivus spėjimas – 88 %); pokalbio trukmė `duration` pašalinta kaip duomenų nutekėjimas; labiausiai sprendimą lemia skambučio mėnuo, kontakto būdas ir ankstesnės kampanijos rezultatas. Originalo `pip install tensorflow_decision_forests` dabartiniame Colab nebeveikia, todėl naudojamas YDF – ta pati biblioteka be TensorFlow priklausomybės.
+
 ## Architektūra
 
 ![Komponentų diagrama](docs/diagrams/plantuml/Components.png)
