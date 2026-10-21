@@ -72,6 +72,35 @@ Rezultatai toje pačioje testavimo aibėje (4 522 klientai):
 
 Pagrindinės išvados: su nesubalansuotomis klasėmis accuracy klaidinanti (naivus spėjimas – 88 %); pokalbio trukmė `duration` pašalinta kaip duomenų nutekėjimas; labiausiai sprendimą lemia skambučio mėnuo, kontakto būdas ir ankstesnės kampanijos rezultatas. Originalo `pip install tensorflow_decision_forests` dabartiniame Colab nebeveikia, todėl naudojamas YDF – ta pati biblioteka be TensorFlow priklausomybės.
 
+## 1.4–1.5 užduotys: CNN ir transfer learning
+
+Dėstytojo `cnn.ipynb` (CIFAR-10) ir „Transfer learning 1 / 2“ notebook'ai paaiškinti ir perdaryti su savais duomenimis: [tf_flowers](https://www.tensorflow.org/datasets/catalog/tf_flowers) (3 670 gėlių nuotraukų, 5 klasės) ir sporto nuotraukos iš Wikimedia Commons (sąsaja su mūsų treniruočių planuotoju).
+
+| Notebook | Turinys | |
+|---|---|---|
+| [`1_4_flowers_cnn.ipynb`](notebooks/1_4_flowers_cnn.ipynb) | CNN nuo nulio, augmentacija, filtrų ir požymių žemėlapių vizualizacija, konvoliucija rankomis su NumPy, MLP palyginimas | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edvakasas/Tensorflow/blob/main/notebooks/1_4_flowers_cnn.ipynb) |
+| [`1_5_transfer_learning_1_sport_photos.ipynb`](notebooks/1_5_transfer_learning_1_sport_photos.ipynb) | Iš anksto apmokyti TF Hub modeliai sporto nuotraukoms: EfficientNetV2 klasifikacija, objektų aptikimas, segmentacija | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edvakasas/Tensorflow/blob/main/notebooks/1_5_transfer_learning_1_sport_photos.ipynb) |
+| [`1_5_transfer_learning_2_flowers.ipynb`](notebooks/1_5_transfer_learning_2_flowers.ipynb) | Užšaldytas EfficientNetV2-B1 + naujas sluoksnis, fine-tuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/edvakasas/Tensorflow/blob/main/notebooks/1_5_transfer_learning_2_flowers.ipynb) |
+
+Rezultatai toje pačioje tf_flowers testavimo aibėje (551 nuotrauka):
+
+| Modelis | Mokomų parametrų | Test accuracy |
+|---|---|---|
+| MLP | 891 365 | 0,394 |
+| CNN (originali architektūra) | 1 695 109 | 0,628 |
+| CNN + augmentacija + Dropout | 466 309 | 0,722 |
+| **Transfer learning** (užšaldytas EfficientNetV2-B1) | 6 405 | **0,946** |
+| Fine-tuning (visas modelis, 4 epochos) | 6 866 457 | 0,915 |
+
+Pagrindinės išvados:
+- CNN gerokai pranašesnis už MLP.
+- Mažam duomenų rinkiniui augmentacija būtina.
+- Transfer learning su vos 6 405 mokomais parametrais lenkia CNN nuo nulio 22 procentiniais punktais.
+- Fine-tuning su ~2 600 nuotraukų rezultatą pablogino. Originale atšildytas modelis nebuvo perkompiliuotas, todėl tikėtina, kad fine-tuning ten realiai nevyko.
+- Iš anksto apmokyti modeliai atpažįsta štangą, dviračius, krepšinį ir tenisą, bet svarstį painioja su hanteliu, o sudėtingų scenų (maratonas, futbolas, plaukimas) neatpažįsta.
+
+Originalo ImageNet-21k klasių failas (`storage.googleapis.com/bit_models/…`) nebepasiekiamas (403), todėl klasės sudaromos iš [timm](https://github.com/huggingface/pytorch-image-models) failų.
+
 ## Architektūra
 
 ![Komponentų diagrama](docs/diagrams/plantuml/Components.png)
