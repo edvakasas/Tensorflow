@@ -3,7 +3,7 @@
 Čia saugomi atsakymai, gauti pateikus [`../test_prompt.md`](../test_prompt.md) GPT agentui (ChatGPT):
 
 - [`chatgpt_example_01.json`](chatgpt_example_01.json) – ChatGPT grąžintas JSON planas;
-- `chatgpt_example_01.png` – pokalbio ekrano nuotrauka.
+- [`chatgpt_example_01.jpg`](chatgpt_example_01.jpg) – pokalbio ekrano nuotrauka.
 
 ## Įvertinimas
 
@@ -19,3 +19,5 @@ Atsakymas patikrintas tuo pačiu `ResponseValidator` ir tais pačiais priėmimo 
 | `notes_present` | ✅ |
 
 **Rezultatas: 5/5 kriterijų.** Palyginus su Gemini: abu modeliai laikėsi visų taisyklių; ChatGPT pasirinko trumpesnį poilsį (30 s) ir trumpesnes treniruotes (~20 min iš leidžiamų 30).
+
+![ChatGPT atsakymas](chatgpt_example_01.jpg)
